@@ -16,8 +16,8 @@ int main()
     cout << "How many rows would you like? ";
     cin >> rows;
 
-    for (int a = 1; a <= rows; a++) {
-        for (int i = 1; i <= a; i++) {
+    for (int a = 1; a <= rows; a++) { // increase columns from 1 to row
+        for (int i = 1; i <= a; i++) { // print "+" in an increasing triangle shape
             cout << "+";
         }
         cout << endl;
@@ -25,8 +25,8 @@ int main()
     
     cout << endl;
 
-    for (int b = rows; b >= 1; b--) {
-        for (int j = 1; j <= b; j++) {
+    for (int b = rows; b >= 1; b--) { // decrease columns from row to 1
+        for (int j = 1; j <= b; j++) { // print "+" in an inverted triangle shape
             cout << "+";
         }
         cout << endl;
