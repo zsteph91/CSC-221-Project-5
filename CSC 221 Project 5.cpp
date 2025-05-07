@@ -1,41 +1,37 @@
-// CSC 221 Project 5.cpp : Program 1: Population
+// CSC 221 Project 5.cpp : Program 2: Student Lineup
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-    float population, popIncrease, popIncDecimal, numDays, dailyIncrease, finalPop;
+    // read student names from the file LineUp.txt
+    // output the count of the number of students in the file
+    // output which student will be at the front of the alphabetically organized line
+    // output which student will be at the end of that line
 
-    cout << "What is the starting number of organisms? "; // ask for the starting number of organisms, must be greater than 2
-    cin >> population;
-
-    if (population < 2) {
-        cout << "Invalid: population too small" << endl;
-    }
-    cout << "What is the average daily population increase (%)? "; // ask for their average daily population increase (as a percentage), can't be negative
-    cin >> popIncrease;
-
-    if (popIncrease < 0) {
-            cout << "Invalid: population must increase";
+    ifstream inFile("LineUp.txt");
+    if (!inFile) {
+        cerr << "Error opening file" << endl;
+        return 1;
     }
 
-    popIncDecimal = popIncrease / 100; // convert percentage to decimal so it can be used in calculations
-
-    cout << "How many days do you want to predict? "; // ask for the number of days they will multiply, must be at least 1 day
-    cin >> numDays;
-
-    if (numDays < 1) {
-        cout << "Invalid: need to predict for at least one day";
+    string name, first = "Z", last = "A";
+    int count = 0; // variable to count students in the file
+    while (inFile >> name) {
+        if (first > name) {
+            first = name;
+        }
+        if (last < name) {
+            last = name;
+        }
+        count += 1;
     }
-    
-    for (int i = 1; i <= numDays; i++) { // initialize a counter to go from 1 to numDays, increasing by one with eachiteration
-        dailyIncrease = popIncDecimal * population; // calculate the number the population increases by each day
-        population += dailyIncrease;
-        finalPop = population + dailyIncrease; // add the daily increase to the old population each iteration
-    }
-    cout << "The population will be " << finalPop << " after " << numDays << " days." << endl;
+    cout << "There are " << count << " students in the class." << endl << first << " will be at the front of the line, and " << last 
+        << " will be at the end of the line." << endl;
 }
 
 
