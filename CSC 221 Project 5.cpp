@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    // create two patterns of "+"s in the shape of a triangle and inverted triangle next to one another
+    // create two patterns of "+"s in the shape of a triangle and inverted triangle
 
     int rows;
 
