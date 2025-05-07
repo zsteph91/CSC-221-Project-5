@@ -30,6 +30,9 @@ int main()
         }
         count += 1;
     }
+
+    inFile.close();
+
     cout << "There are " << count << " students in the class." << endl << first << " will be at the front of the line, and " << last 
         << " will be at the end of the line." << endl;
 }
