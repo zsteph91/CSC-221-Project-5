@@ -14,15 +14,15 @@ int main()
     // output which student will be at the end of that line
 
     ifstream inFile("LineUp.txt");
-    if (!inFile) {
+    if (!inFile) { // check that the file exists
         cerr << "Error opening file" << endl;
         return 1;
     }
 
-    string name, first = "z", last = "A";
+    string name, first = "z", last = "A"; // set the first and last name variable
     int count = 0; // variable to count students in the file
     while (inFile >> name) {
-        if (first > name) {
+        if (first > name) { // check ascii value for alphabetical order
             first = name;
         }
         if (last < name) {
