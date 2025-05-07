@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    float population, popIncrease, popIncDecimal, numDays, dailyIncrease, finalPop = 0;
+    float population, popIncrease, popIncDecimal, numDays, dailyIncrease, finalPop;
 
     cout << "What is the starting number of organisms? "; // ask for the starting number of organisms, must be greater than 2
     cin >> population;
