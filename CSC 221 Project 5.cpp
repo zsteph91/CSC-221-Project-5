@@ -19,7 +19,7 @@ int main()
         return 1;
     }
 
-    string name, first = "Z", last = "A";
+    string name, first = "z", last = "A";
     int count = 0; // variable to count students in the file
     while (inFile >> name) {
         if (first > name) {
